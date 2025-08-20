@@ -1,1 +1,1 @@
-# NestJS Cars App
+# NestJS Cats App

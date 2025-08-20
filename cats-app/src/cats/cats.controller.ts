@@ -38,4 +38,9 @@ export class CatsController {
   remove(@Param('id', ParseInt) id: number) {
     return this.catsService.remove(id);
   }
+
+  @Get('config/:name')
+  getConfig(@Param('name') name: string) {
+    return this.catsService.getConfig(name);
+  }
 }

@@ -1,9 +1,11 @@
 import { Injectable } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { CreateCatDto } from './dto/create-cat.dto';
 import { Cat } from './interfaces/cat.interface';
 
 @Injectable()
 export class CatsService {
+  constructor(private configService: ConfigService) {}
   private cats: Cat[] = [];
   create(cat: CreateCatDto) {
     const newId =
@@ -27,5 +29,9 @@ export class CatsService {
     const indexToDelete = this.cats.findIndex((cat) => cat.id === id);
     if (indexToDelete < 0) return false;
     return !!this.cats.splice(indexToDelete, 1).length;
+  }
+
+  getConfig(name: string) {
+    return this.configService.get(name);
   }
 }

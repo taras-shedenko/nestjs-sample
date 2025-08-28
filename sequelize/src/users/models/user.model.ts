@@ -8,6 +8,9 @@ export class User extends Model {
   @Column
   lastName: string;
 
+  @Column
+  email: string;
+
   @Column({ defaultValue: 1 })
   isActive: boolean;
 }

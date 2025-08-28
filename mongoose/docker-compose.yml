@@ -23,7 +23,7 @@ services:
       ME_CONFIG_BASICAUTH_USERNAME: user
       ME_CONFIG_BASICAUTH_PASSWORD: 1234
     ports:
-      - '8081:8081'
+      - 9000:8081
 volumes:
   db-volume:
   configdb-volume:

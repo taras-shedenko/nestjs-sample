@@ -10,7 +10,7 @@ services:
     volumes:
       - db-volume:/var/lib/mysql
     ports:
-      - '3306:3306'
+      - 3306:3306
   myadmin:
     image: phpmyadmin:latest
     restart: always
@@ -20,6 +20,6 @@ services:
       PMA_HOST: mysql
       MYSQL_ROOT_PASSWORD: 1234
     ports:
-      - '8080:80'
+      - 9000:80
 volumes:
   db-volume:

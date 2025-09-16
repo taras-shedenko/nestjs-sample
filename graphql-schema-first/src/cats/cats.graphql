@@ -1,0 +1,20 @@
+type Cat {
+  id: ID!
+  name: String!
+  age: Int
+}
+
+input CreateCatInput {
+  name: String!
+  age: Int
+}
+
+type Query {
+  cats: [Cat!]!
+  cat(id: ID!): Cat
+}
+
+type Mutation {
+  createCat(createCatInput: CreateCatInput!): Cat!
+  removeCat(id: ID!): Boolean
+}

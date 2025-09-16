@@ -1,0 +1,33 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+directive @upper on FIELD_DEFINITION
+
+"""Recipe"""
+type Recipe {
+  id: ID!
+  title: String!
+  description: String
+  creationDate: Date!
+  ingridients: [String!]!
+}
+
+"""Date custom scalar type"""
+scalar Date
+
+type Query {
+  recipes: [Recipe!]!
+  recipe(id: String!): Recipe!
+}
+
+type Mutation {
+  create(recipe: CreateRecipeInput!): Recipe!
+  remove(id: String!): Boolean!
+}
+
+input CreateRecipeInput {
+  title: String!
+  description: String
+  ingridients: [String!]!
+}
